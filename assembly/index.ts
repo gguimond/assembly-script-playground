@@ -113,7 +113,7 @@ export function generateCheckerBoard2dArray(
   lightValueGreen: i32,
   lightValueBlue: i32
 ): Array<Array<Int32Array>> {
-  const checkBoard = new Array<Array<Int32Array>>(CHECKERBOARD_BUFFER_SIZE)
+  const checkBoard = new Array<Array<Int32Array>>(CHECKERBOARD_SIZE)
   for (let x: i32 = 0; x < CHECKERBOARD_SIZE; x++) {
     checkBoard[x] = new Array<Int32Array>(CHECKERBOARD_SIZE)
     for (let y: i32 = 0; y < CHECKERBOARD_SIZE; y++) {
@@ -134,9 +134,6 @@ export function generateCheckerBoard2dArray(
         squareValueGreen = lightValueGreen;
         squareValueBlue = lightValueBlue;
       }
-
-      let squareNumber = y * CHECKERBOARD_SIZE + x
-      let squareRgbaIndex = squareNumber * 4
 
       const entry = new Int32Array(4)
 
